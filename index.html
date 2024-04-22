@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atmiņas spēle</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 50px;
+  }
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>Memory Game</h1>
+
+<div class="container">
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+  <div class="card" onclick="revealCard(this)"></div>
+</div>
+
+<script>
+  let cards = document.querySelectorAll('.card');
+  let hasFlippedCard = false;
+  let firstCard, secondCard;
+
+  function revealCard(card) {
+    card.classList.add('flip');
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = card;
+    } else {
+      hasFlippedCard = false;
+      secondCard = card;
+      checkForMatch();
+    }
+  }
+
+  function checkForMatch() {
+    if (firstCard.innerHTML === secondCard.innerHTML) {
+      disableCards();
+    } else {
+      unflipCards();
+    }
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', revealCard);
+    secondCard.removeEventListener('click', revealCard);
+  }
+
+  function unflipCards() {
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
