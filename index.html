@@ -3,53 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atmiņas spēle</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    margin-top: 50px;
-  }
-  .card {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(104, 222, 237);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-  }
-</style>
+<title>Memory Game</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Atmiņas spēle</h1>
+<div id="game-board" class="two-columns"></div>
 
-<div class="container">
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-  <div class="card" onclick="revealCard(this)"></div>
-
-</div>
-
-<script>
-  let cards = document.querySelectorAll('.card');
-  let hasFlippedCard = false;
-  let firstCard, secondCard;
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
