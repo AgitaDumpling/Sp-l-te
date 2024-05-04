@@ -18,7 +18,7 @@
   .card {
     width: 100px;
     height: 100px;
-    background-color: lightgray;
+    background-color: rgb(104, 222, 237);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -49,37 +49,6 @@
   let hasFlippedCard = false;
   let firstCard, secondCard;
 
-  function revealCard(card) {
-    card.classList.add('flip');
-    if (!hasFlippedCard) {
-      hasFlippedCard = true;
-      firstCard = card;
-    } else {
-      hasFlippedCard = false;
-      secondCard = card;
-      checkForMatch();
-    }
-  }
-
-  function checkForMatch() {
-    if (firstCard.innerHTML === secondCard.innerHTML) {
-      disableCards();
-    } else {
-      unflipCards();
-    }
-  }
-
-  function disableCards() {
-    firstCard.removeEventListener('click', revealCard);
-    secondCard.removeEventListener('click', revealCard);
-  }
-
-  function unflipCards() {
-    setTimeout(() => {
-      firstCard.classList.remove('flip');
-      secondCard.classList.remove('flip');
-    }, 1000);
-  }
 </script>
 
 </body>
