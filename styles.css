@@ -1,23 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.container {
-  width: 400px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-}
-
 .card {
+  width: 200px;
+  height: 300px;
   perspective: 1000px;
 }
 
@@ -52,9 +35,16 @@ body {
 
 .card-back {
   background-color: #efefef;
-  color: #91e7e9;
+  color: #333;
   transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
+  grid-gap: 10px; /* Add gap between cards */
+  width: 800px; /* Adjust container width as needed */
+  margin: 0 auto; /* Center the container */
 }
