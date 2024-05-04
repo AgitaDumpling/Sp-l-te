@@ -3,6 +3,10 @@
   margin-bottom: 20px; /* Add space below the title */
 }
 
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
 .card {
   width: 200px;
   height: 300px;
